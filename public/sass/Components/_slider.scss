@@ -1,0 +1,136 @@
+.headlands{
+		margin: 0;
+		padding: 0;
+		position: relative;
+		display:flex;
+		justify-content:center;
+		align-items: center;
+		height:10vh;
+		box-sizing: border-box;
+		bottom:35rem ;
+		left: 70rem;
+		&-box{
+			
+			position: absolute;
+			width: 60rem;
+			height: 40rem;
+			z-index: 100;
+			@include mobile{
+				width: 30rem;
+				height: 20rem;
+			}
+			@include smtablet{
+				width: 30rem;
+				height: 20rem;
+			}
+			@include tablet{
+				width: 45rem;
+				height: 30rem;
+			}
+		}
+		&-box .face{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			display: flex;
+		}
+		&-box .face span {
+				width: 12rem;
+				height: 100%;
+				transition: .7s;
+				@include mobile{
+					width: 6rem;
+					
+				}
+				@include smtablet{
+					width: 6rem;
+					
+				}
+				@include tablet{
+					width: 9rem;
+					
+				}
+		}
+			
+		&-box .face.face1 span {
+				background: url(../img/tainghe26x4.jpg);
+				transform-origin: top;
+				@include tablet {
+				width: 75%;
+				}
+		}
+		&-box:hover .face.face1 span {
+				transform: rotateX(90deg) translateY(-50%);
+		}
+		&-box .face.face2 span {
+				background: url(../img/tainghe36x4.jpg);
+				transform: rotateX(90deg) translateY(50%);
+				transform-origin: bottom ;
+		}
+		&-box:hover .face.face2 span {	
+			transform: rotateX(0deg) translateY(0);
+		}
+		&-box .face span:nth-child(1) {
+			background-position-x:0rem;
+			transition-delay:0 ;
+			border-radius:2rem 0 0 2rem ;
+			
+		}
+		&-box .face span:nth-child(2) {
+			background-position-x:-12rem;
+			transition-delay:0.2s ;
+			@include mobile{
+				background-position-x:-6rem;
+			}
+			@include smtablet{
+				background-position-x:-6rem;
+			}
+			@include tablet{
+				background-position-x:-9rem;
+			}
+		}
+		&-box .face span:nth-child(3) {
+			background-position-x:-24rem;
+			transition-delay:0.4s ;
+			@include mobile{
+				background-position-x:-12rem;
+			}
+			@include smtablet{
+				background-position-x:-12rem;
+			}
+			@include tablet{
+				background-position-x:-18rem;
+			}
+		}
+		&-box .face span:nth-child(4) {
+			background-position-x:-36rem;
+			transition-delay:0.6s ;
+			@include mobile{
+				background-position-x:-18rem;
+			}
+			@include smtablet{
+				background-position-x:-18rem;
+			}
+			@include tablet{
+				background-position-x:-27rem;
+			}
+		}
+		&-box .face span:nth-child(5) {
+			background-position-x:-48rem;
+			transition-delay:0.8s ;
+			border-radius:0 2rem 2rem 0 ;
+			@include mobile{
+				background-position-x:-24rem;
+			}
+			@include smtablet{
+				background-position-x:-24rem;
+			}
+			@include tablet{
+				background-position-x:-36rem;
+			}
+		}
+}	  
+
+

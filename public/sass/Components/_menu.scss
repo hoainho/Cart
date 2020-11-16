@@ -1,0 +1,359 @@
+.navigation 
+{
+  position: fixed;
+  height: 4rem;
+  z-index: 99999999999999999999999999999999999999999999999999999;
+  &-button {
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    top: 5rem;
+    left: 72rem;
+    position: fixed;
+    z-index: 2000;
+    animation: chuyendongmauvarung 2s infinite;
+    background-image: linear-gradient(to right bottom,
+    $color-red,
+    $color-blue,
+    $color-secondary-light,
+    $color-purple,
+    $color-green-dark
+    );
+    @include mobile{
+      height: 4rem;
+      width: 4rem;
+      border-radius: 50%;
+      cursor: pointer;
+      top: 2rem;
+      left: 50%;
+    }
+    @include smtablet{
+      height: 4rem;
+      width: 4rem;
+      border-radius: 50%;
+      cursor: pointer;
+      top: 2rem;
+      left: 50%;
+    }
+    @include tablet{
+      height: 4rem;
+      width: 4rem;
+      border-radius: 50%;
+      cursor: pointer;
+      top: 2rem;
+      left: 50%;
+    }
+
+    &:hover{
+      animation-play-state: paused;
+    }
+  }
+  &-checkbox{
+    opacity: 0;
+    transform: translate(75rem,5rem);
+  }
+  
+  
+  &-checkbox:checked~&-nav{
+    .move1{
+      animation: chuyendongrung 1s;
+    }
+    .move2{
+      animation: chuyendongrung 3s;
+    }
+    .move3{
+      animation: chuyendongrung 3.5s;
+    }
+    .move4{
+      animation: chuyendongrung 4s ;
+    }
+    .move5{
+      animation: chuyendongrung 4.5s ;
+
+    }
+    display: block;
+    width: 100%;
+  }
+  &-checkbox:checked~&-button{
+    box-shadow: 0 0 10px $color-secondary-light ,
+      0 0 40px $color-blue,
+      0 0 60px $color-red,
+      0 0 80px $color-blue,
+      0 0 100px $color-red;
+    opacity: 0.3;
+    background-image:white transparent;
+  }
+  &-link:checked~&-nav{
+    opacity:0;
+    width: 0;
+  }
+  &-icon{
+    height: 5rem;
+    width: 5rem;
+    font-size: 2.5rem;
+    transform: translate(0rem,0rem);
+    @include mobile{
+      height: 4rem;
+      width: 4rem;
+      
+    }
+    @include smtablet{
+      height: 4rem;
+      width: 4rem;
+      
+    }
+    @include tablet{
+      height: 4rem;
+      width: 4rem;
+      
+    }
+  }
+  // &-background{
+  //   background-image:linear-gradient(to right,$color-blue-light,
+  //   $color-blue
+  //   );
+  //   height: 3rem;
+  //   width: 3rem;
+  //   border-radius: 50%;
+  //   top: 2rem;
+  //   left: 73.5rem;
+  //   z-index: 1;
+  //   position: fixed;
+  //   transition: transform .8s;
+  // }
+  &-nav{
+    z-index: 1500;
+    height: 8vh;
+    width:0;
+    top:2%;
+    position: fixed;
+    display: none;
+    transition: transform 1s;
+    
+  }
+
+  &-list{
+    text-align: center;
+    list-style-type: none;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+ 
+  }
+  &-item{
+    margin: 0.5rem;
+    @include mobile{
+      margin: -1rem;
+    }
+    @include smtablet{
+      margin: -0.6rem;
+    }
+    @include tablet{
+      margin: -0.4rem;;
+    }
+
+  }
+  &-link{
+    &:link,
+    &:visited{
+    position: relative;
+    display: inline-block;
+    color: $color-secondary;
+    width:80%;
+    letter-spacing: 0.2rem;
+    font-size: 1.5rem;
+    font-weight: 1rem;
+    line-height: 1.5rem;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 1rem;
+    transition: all .2s;
+    overflow: hidden;
+    }
+    & .running {
+      position: absolute;
+      display: block;
+    }
+    & .running:nth-child(1){
+      top:0;
+      left:-100%;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg,transparent,$color-secondary);
+    }
+    &:hover .running:nth-child(1)
+    {
+      left:100%;
+      transition: 0.4s;
+    }
+    & .running:nth-child(3){
+      bottom:0;
+      right:-100%;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(270deg,transparent,$color-secondary);
+    }
+    &:hover .running:nth-child(3)
+    {
+      right:100%;
+      transition: 0.4s;
+      transition-delay: 0.3s;
+    }
+    & .running:nth-child(2){
+      right:0%;
+      top:-100%;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(180deg,transparent,$color-secondary);
+    }
+    &:hover .running:nth-child(2)
+    {
+      top:100%;
+      transition: 0.4s;
+      transition-delay: 0.2s;
+    }
+    & .running:nth-child(4){
+      bottom:-100%;
+      left:0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(360deg,transparent,$color-secondary);
+    }
+    &:hover .running:nth-child(4)
+    {
+      bottom:100%;
+      transition: 0.4s;
+      transition-delay: 0.35s;
+    }
+    &:hover{
+      color:$color-white;
+      background-color: $color-secondary-light;
+      box-shadow: 0 0 10px $color-secondary-light ,
+      0 0 40px $color-secondary-light,
+      0 0 80px $color-secondary-light;
+      transition-delay: 0.5s;
+    }
+    
+  }
+}
+.option {
+  display: none;
+  top: 30rem;
+  left: 0rem;
+  background: #c6c0c0;
+  border-radius: 0 1rem 1rem 0;
+  height: 12rem;
+  animation: none;
+  position: fixed;
+  &-nav{
+    position: absolute;
+    display:none;
+    top:100rem;
+    left: 15rem;
+    z-index: 3000;
+  }
+  &-checkbox{
+    opacity: 0;
+  }
+  &-checkbox:checked~&-nav{
+    .anime1, .anime2, .anime3, .anime4, .anime5{
+      animation: rollIn 2s;
+    }
+    display: block;
+    width: 100%;
+  }
+  &-checkbox:disabled~&-nav{
+    .anime1, .anime2, .anime3, .anime4, .anime5{
+      animation-name: rollOut;
+      animation-timing-function: 2s;
+      .anime2{
+        animation-delay: 0.2;
+      }
+      .anime3{
+        animation-delay: 0.4;
+      }
+      .anime4{
+        animation-delay: 0.6;
+      }
+      .anime5{
+        animation-delay: 0.8;
+      } 
+    }
+    display: block;
+    width: 100%;
+  }
+  &-list{
+    width: 20%;
+    display: inline-block;
+    text-align: center; 
+  }
+  &-link{
+    &:link,
+    &:visited{
+    position: relative;   
+    color: $color-secondary;
+    width: 55%;
+    letter-spacing: 0.2rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.5rem;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 1rem;
+    }
+  }
+ 
+  .wrapper {
+    width: 100%;
+    font-family: 'Source Code Pro', monospace;
+    margin: 0 auto;
+    height: 100%;
+    cursor: pointer;
+    .option-btn {
+      text-transform: uppercase;
+      transform: translate(-50%, -40%) skew(10deg) rotate(-80deg);
+      font-size: 3rem;
+      top: 50%;
+      left:45%;
+      margin: 0;
+      position: absolute;
+      font-weight: 900;
+      color: rgba(#ff9eb1, 0.5);
+      text-shadow: 1px 4px 6px $color-white, 0 0 0 #66303a, 1px 4px 6px $color-white;
+      white-space: nowrap;
+
+      &:before {
+        content: attr(data-heading);
+        position: absolute;
+        left: 0;
+        top: -4.8%;
+        overflow: hidden;
+        width: 100%;
+        height: 50%;
+        color: #fbf7f4;
+        transform: translate(0.7rem, 0) skew(-30deg) scale(1, 1.2);
+        z-index: 2;
+        text-shadow: 2px -1px 6px rgba(0,0,0,0.2);
+      }
+      
+      &:after {
+        content: attr(data-heading);
+        position: absolute;
+        left: 0;
+        top: 0;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        color: #d3cfcc;
+        transform: translate(0rem, 0.1rem) skew(30deg) scale(1, 0.8);
+        clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0% 100%);
+        text-shadow: 2px -1px 6px rgba(0,0,0,0.3);
+      }
+    }
+  }
+}
+
