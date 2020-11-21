@@ -1,5 +1,5 @@
 
-function Header() {
+function Navbar() {
     return (
         <header>
             <ul id="slide-out" className="side-nav hidden custom-scrollbar sn-bg-2 ps ps--theme_default" data-ps-id="c27390a3-9efc-e0d8-197a-ab96d73a156a">
@@ -201,7 +201,7 @@ function Header() {
 
                 <ul className="nav navbar-nav nav-flex-icons ml-auto">
                     <li className="nav-item dropdown">
-                        <a href="/" className="nav-link dropdown-toggle waves-effect waves-light" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a href="/"className="nav-link dropdown-toggle waves-effect waves-light" id="dropdownMenu1">
                             <i className="fa fa-user"></i> Tài Khoản
                         </a>
                         <div className="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
@@ -219,5 +219,5 @@ function Header() {
     );
   }
   
-  export default Header;
+  export default Navbar;
   

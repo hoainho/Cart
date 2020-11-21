@@ -1,5 +1,5 @@
-
-function Footer() {
+import React from 'react';
+function information() {
     return (
         <footer className="page-footer center-on-small-only">
             <div className="container-fluid">
@@ -168,5 +168,5 @@ function Footer() {
     );
   }
   
-  export default Footer;
+export default information;
   

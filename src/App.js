@@ -1,11 +1,12 @@
-import { Header } from './Components/Header';
-import { Footer } from './Components/Footer';
+import React from 'react'
+import { Navbar } from './Components/navbar';
+import { information } from './Components/FTCart';
 import { Cart } from './Components/Cart';
 import { Products } from './Components/Products';
 function App() {
   return (
        <div>
-        <Header />
+        <Navbar />
         <main id="mainContainer">
             <div className="container">
                 <section className="section">
@@ -132,7 +133,7 @@ function App() {
                 </section>
             </div>
         </main>
-        <Footer />
+        <FTCart />
     </div>
   );
 }
