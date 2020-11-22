@@ -1,14 +1,46 @@
-import { cartItem } from './cartItem';
+import cartItem  from './cartItem';
 function Cart() {
     return (
         <section className="section">
-            <h1 className="section-heading">Danh Sách Sản Phẩm</h1>
-            <div className="row">
-                <div className="col-lg-4 col-md-6 mb-r">
-                    <cartItem />
-                </div>
-            </div>
-        </section>
+        <div className="table-responsive">
+            <table className="table product-table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Sản Phẩm</th>
+                        <th>Giá</th>
+                        <th>Số Lượng</th>
+                        <th>Tổng Cộng</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                   <cartItem />
+                   <cartItem />
+                   <cartItem />
+                    <tr>
+                        <td colSpan="3"></td>
+                        <td>
+                            <h4>
+                                <strong>Tổng Tiền</strong>
+                            </h4>
+                        </td>
+                        <td>
+                            <h4>
+                                <strong>15$</strong>
+                            </h4>
+                        </td>
+                        <td colSpan="3">
+                            <button type="button" className="btn btn-primary waves-effect waves-light">Complete purchase
+                                <i className="fa fa-angle-right right"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
                 
    );
   }

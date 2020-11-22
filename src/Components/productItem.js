@@ -1,5 +1,5 @@
 
-function productItem() {
+function ProductItem() {
     return (
         <div className="card text-center card-cascade narrower">
         <div className="view overlay hm-white-slight z-depth-1">
@@ -45,8 +45,9 @@ function productItem() {
             </div>
         </div>
     </div>
+    
     );
   }
   
-  export default productItem;
+  export default ProductItem;
   

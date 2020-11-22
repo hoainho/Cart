@@ -1,50 +1,36 @@
 
 function cartItem() {
     return (
-        <div className="card text-center card-cascade narrower">
-            <div className="view overlay hm-white-slight z-depth-1">
-                <img src="https://store.storeimages.cdn-apple.com/4974/as-images.apple.com/is/image/AppleInc/aos/published/images/H/H0/HH0H2/HH0H2?wid=445&hei=445&fmt=jpeg&qlt=95&op_sharpen=0&resMode=bicub&op_usm=0.5,0.5,0,0&iccEmbed=0&layer=comp&.v=K7ik72"
-                    className="img-fluid" alt="" />
-                <a href="/">
-                    <div className="mask waves-light waves-effect waves-light"></div>
-                </a>
+        <tr>
+        <th scope="row">
+            <img src="https://store.storeimages.cdn-apple.com/4974/as-images.apple.com/is/image/AppleInc/aos/published/images/H/H0/HH0H2/HH0H2?wid=445&hei=445&fmt=jpeg&qlt=95&op_sharpen=0&resMode=bicub&op_usm=0.5,0.5,0,0&iccEmbed=0&layer=comp&.v=K7ik72"
+                alt="" className="img-fluid z-depth-0" />
+        </th>
+        <td>
+            <h5>
+                <strong>Iphone 6 Plus</strong>
+            </h5>
+        </td>
+        <td>15$</td>
+        <td className="center-on-small-only">
+            <span className="qty">1 </span>
+            <div className="btn-group radio-group" data-toggle="buttons">
+                <label className="btn btn-sm btn-primary btn-rounded waves-effect waves-light">
+                    <a href="/">—</a>
+                </label>
+                <label className="btn btn-sm btn-primary btn-rounded waves-effect waves-light">
+                    <a href="/">+</a>
+                </label>
             </div>
-            <div className="card-body">
-                <h4 className="card-title">
-                    <strong>
-                        <a href="/">Iphone 6 Plus</a>
-                    </strong>
-                </h4>
-                <ul className="rating">
-                    <li>
-                        <i className="fa fa-star"></i>
-                    </li>
-                    <li>
-                        <i className="fa fa-star"></i>
-                    </li>
-                    <li>
-                        <i className="fa fa-star"></i>
-                    </li>
-                    <li>
-                        <i className="fa fa-star"></i>
-                    </li>
-                    <li>
-                        <i className="fa fa-star"></i>
-                    </li>
-                </ul>
-                <p className="card-text">
-                    Sản phẩm do apply sản xuất
-                </p>
-                <div className="card-footer">
-                    <span className="left">15$</span>
-                    <span className="right">
-                        <a href="/" className="btn-floating blue-gradient" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to Cart">
-                            <i className="fa fa-shopping-cart"></i>
-                        </a>
-                    </span>
-                </div>
-            </div>
-        </div>
+        </td>
+        <td>15$</td>
+        <td>
+            <button type="button" className="btn btn-sm btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top"
+                title="" data-original-title="Remove item">
+                X
+            </button>
+        </td>
+    </tr>
 
     );
   }
