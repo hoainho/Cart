@@ -6,8 +6,6 @@ function Products() {
                       <div className="row">
                           <div className="col-lg-4 col-md-6 mb-r">
                               <ProductItem />
-                              <ProductItem />
-                              <ProductItem />
                           </div>
                       </div>
                   </section>
