@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar  from './Components/navbar';
-import Footer  from './Components/FTCart';
+import Footer  from './Components/Footer';
 import Cart  from './Components/Cart';
 import Products  from './Components/Products';
 import Notification from './Components/Notification';
@@ -12,7 +12,7 @@ function App() {
             <div className="container">
                 <Products />
                 <Notification />
-               <Cart/>
+                <Cart/>
             </div>
         </main>
         <Footer />
