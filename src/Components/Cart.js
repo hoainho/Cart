@@ -1,9 +1,8 @@
 import React,{ Component } from 'react';
-import CartItem  from './CartItem';
-import CartTotal from './CartTotal';
 import { connect } from 'react-redux'
 class Cart extends Component {
     render(){
+        var { children } = this.props
         return (
             <section className="section">
                 <div className="table-responsive">
@@ -19,8 +18,7 @@ class Cart extends Component {
                             </tr>
                         </thead>
                         <tbody>
-                            <CartItem />
-                            <CartTotal />
+                            { children }
                         </tbody>
                     </table>
                 </div>
@@ -28,9 +26,5 @@ class Cart extends Component {
        );
     }
   }
-const Database = state => {
-    return {
-    }
-}
-export default connect(Database,null)(Cart);
+export default connect(null,null)(Cart);
   

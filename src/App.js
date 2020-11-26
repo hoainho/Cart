@@ -1,9 +1,9 @@
 import React from 'react'
 import Navbar  from './Components/navbar';
 import Footer  from './Components/Footer';
-import Cart  from './Components/Cart';
 import ProductContainer  from './containers/ProductContainer';
 import Notification from './Components/Notification';
+import CartContainer from './containers/CartContainer';
 function App() {
   return (
        <div>
@@ -12,7 +12,7 @@ function App() {
             <div className="container">
                 <ProductContainer />
                 <Notification />
-                <Cart/>
+                <CartContainer/>
             </div>
         </main>
         <Footer />

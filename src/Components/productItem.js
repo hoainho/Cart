@@ -1,5 +1,6 @@
 import React, { Component } from 'react'; 
 class ProductItem extends Component {
+    
     showRating(rating){
         var totalRating = []
         for(var i = 1; i <= rating ; i ++){
@@ -10,6 +11,9 @@ class ProductItem extends Component {
         }
         return totalRating;
     };
+    onAddToCart = (product) =>{
+        this.props.AddToCart(product)
+    }
     render(){
         var { product } = this.props;
         return (
@@ -32,19 +36,6 @@ class ProductItem extends Component {
                         <li>
                             {this.showRating(product.rating)}
                         </li>
-                        {/* <li>
-                            <i className="fa fa-star"></i>
-                        </li>
-                        <li>
-                            <i className="fa fa-star"></i>
-                        </li>
-                        <li>
-                            <i className="fa fa-star"></i>
-                        </li>
-                        <li>
-                            <i className="fa fa-star"></i>
-                        </li>
-                    */}
                     </ul>
                     <p className="card-text">
                     {product.description}
@@ -52,9 +43,15 @@ class ProductItem extends Component {
                     <div className="card-footer">
                         <span className="left">{product.price}$</span>
                         <span className="right">
-                            <a href="/" className="btn-floating blue-gradient" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to Cart">
+                            <button 
+                            className="btn-floating blue-gradient" 
+                            data-toggle="tooltip" 
+                            data-placement="top" 
+                            data-original-title="Add to Cart"
+                            onClick ={ () => {this.onAddToCart(product)} }
+                           >
                                 <i className="fa fa-shopping-cart"></i>
-                            </a>
+                            </button>
                         </span>
                     </div>
                 </div>
