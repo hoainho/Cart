@@ -1,2 +1,5 @@
 export const ADD_TO_CART = 'ADD_TO_CART'
+export const DEL_TO_CART = 'DEL_TO_CART'
+export const UPDATE_QUANTITY = 'UPDATE_QUANTITY'
+export const CHANGE_MESSAGE = 'CHANGE_MESSAGE'
 

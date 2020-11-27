@@ -1,4 +1,5 @@
 import * as types from '../constant/Actions';
+import _ from 'lodash';
 // var data = JSON.parse(localStorage.getItem('CART'))
 var initialState = [
     {
@@ -37,20 +38,51 @@ var cart = (state = initialState , action) => {
                         index = i
                         break
                     }
+                }     
+            }
+            if(index !== -1){
+                state[index].quantity += quantity
+            }
+            else{
+                state.push({
+                    product,
+                    quantity
+                })
+            
+            }
+        
+            return [...state] 
+        case types.DEL_TO_CART : 
+        console.log(action);
+            var { products } = action
+            var index = null
+            for( var i = 0 ; i < state.length ; i ++){
+                if(state[i].product.id === products.id){
+                    index = i
+                    break
                 }
-                   if(index !== -1){
-                    state[index].quantity += quantity
-                }
-                else{
-                    state.push({
-                        product,
-                        quantity
-                    })
+            }   
+            state.splice(index,1)
+        return [...state]
+        case types.UPDATE_QUANTITY : 
+        var { product , quantity } = action
+            if(state.length > 0){
+                    for( var i = 0 ; i < state.length ; i ++){
+                        if(state[i].product.id === product.id){
+                            index = i
+                            break
+                        }
+                    }
+                    if(state[index].quantity > 1){
+                        state[index].quantity += quantity
+                    }
+                    else{
+                        state.splice(index,1)
+                    }
                 
             }
-            }
-            
         return [...state] 
+        //Return default
         default : return [...state]
     }
 }

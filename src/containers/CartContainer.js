@@ -5,23 +5,31 @@ import CartItem from '../Components/CartItem';
 import CartTotal from '../Components/CartTotal';
 import Cart from '../Components/Cart';
 import PropTypes from 'prop-types';
+import * as actions from '../actions/index';
 class CartContainer extends Component {   
     render(){
       var {cart} = this.props
     return (
-        <Cart >
+        <Cart>
             { this.showCart(cart) }
             { this.showCartTotal(cart)}
-        </Cart>
+        </Cart> 
     );
     }
     showCart = (cart) =>{
       var result = Message.MESS_EMPTY_TO_CART;
         result = cart.map((item, index) =>{
-            return <CartItem key={ index } item ={ item } index={ index }/>
+            return <CartItem 
+                    key={ index } 
+                    item ={ item } 
+                    index={ index } 
+                    UpdateQuantity = { this.props.UpdateQuantity }
+                    ChangeMessage = { this.props.ChangeMessage }
+                    DeleteCart = { this.props.DeleteCart }/>
         })
       return result
     }
+    
     showCartTotal = cart =>{
       return <CartTotal cart = { cart }/>
     }
@@ -48,10 +56,19 @@ const Database = state =>{
     cart : state.cart
   }
 }
-// const Actions = (dispatch,props) =>{
-//   return {
-//     AddtoCart : dispatch(actions.actAddToCart())
-//   }
-// }
-export default connect(Database,null)(CartContainer);
+const Actions = (dispatch,props) =>{
+  return {
+    UpdateQuantity : (product,quantity) => {
+      dispatch(actions.actUpdateQuantity(product,quantity))
+    },
+    ChangeMessage : message => {
+      dispatch(actions.actChangeMessage(message))
+    },
+    DeleteCart : product => {
+      dispatch(actions.actDelToCart(product))
+    }
+  }
+
+}
+export default connect(Database,Actions)(CartContainer);
   

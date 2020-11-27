@@ -6,9 +6,9 @@ import * as actions from '../actions/index';
 class ProductContainer extends Component {   
     render(){
         var { products } = this.props
-        var { AddToCart } = this.props
+        var { AddToCart,ChangeMessage } = this.props
         const elmProducts = products.map((product,index) => {
-            return <ProductItem key={index} product={product} AddToCart = { AddToCart }/>
+            return <ProductItem key={index} product={product} AddToCart = { AddToCart } ChangeMessage = {ChangeMessage}/>
         });
     return (
         <Products>
@@ -28,6 +28,9 @@ const Actions = (dispatch,props) =>{
     return {
         AddToCart :(product) => {
             dispatch(actions.actAddToCart(product,1))
+        },
+        ChangeMessage : message => {
+            dispatch(actions.actChangeMessage(message))
         }
     }
 }

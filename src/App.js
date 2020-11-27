@@ -2,8 +2,8 @@ import React from 'react'
 import Navbar  from './Components/navbar';
 import Footer  from './Components/Footer';
 import ProductContainer  from './containers/ProductContainer';
-import Notification from './Components/Notification';
 import CartContainer from './containers/CartContainer';
+import MessageContainer from './containers/MessageContainer';
 function App() {
   return (
        <div>
@@ -11,7 +11,7 @@ function App() {
         <main id="mainContainer">
             <div className="container">
                 <ProductContainer />
-                <Notification />
+                <MessageContainer />
                 <CartContainer/>
             </div>
         </main>

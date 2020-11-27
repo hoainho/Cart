@@ -1,9 +1,15 @@
 import React,{ Component } from "react";
 
 class CartItem extends Component {
-    
-    
-    
+    decrQuantity = (product,quantity) =>{
+        this.props.UpdateQuantity(product,quantity)
+    }
+    incrQuantity = (product,quantity) =>{
+        this.props.UpdateQuantity(product,quantity)
+    }
+    onDeleteCart = product => {
+        this.props.DeleteCart(product);
+    }
     priceTotal = (price,quantity) =>{
         return price * quantity
     }
@@ -24,18 +30,21 @@ class CartItem extends Component {
                 <td className="center-on-small-only">
                     <span className="qty"> { item.quantity }</span>
                     <div className="btn-group radio-group" data-toggle="buttons">
-                        <label className="btn btn-sm btn-primary btn-rounded waves-effect waves-light">
-                            <a href="/">—</a>
+                        <label onClick={()=>this.decrQuantity(item.product,-1)} className="btn btn-sm btn-primary btn-rounded waves-effect waves-light">
+                            <a >—</a>
                         </label>
-                        <label className="btn btn-sm btn-primary btn-rounded waves-effect waves-light">
-                            <a href="/">+</a>
+                        <label onClick={()=>this.incrQuantity(item.product,1)} className="btn btn-sm btn-primary btn-rounded waves-effect waves-light">
+                            <a >+</a>
                         </label>
                     </div>
                 </td>
                 <td>{ this.priceTotal(item.product.price,item.quantity) }$</td>
                 <td>
-                    <button type="button" className="btn btn-sm btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top"
-                        title="" data-original-title="Remove item">
+                    <button type="button" 
+                            className="btn btn-sm btn-primary waves-effect waves-light" 
+                            data-toggle="tooltip" data-placement="top"
+                            data-original-title="Remove item"
+                            onClick={ () => { this.onDeleteCart(item.product)}}>
                         X
                     </button>
                 </td>

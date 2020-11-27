@@ -1,3 +1,4 @@
+import * as typesAct from '../constant/Actions';
 var initialState = [
     {
         id : 1,
@@ -29,6 +30,18 @@ var initialState = [
 ]
 var products = (state = initialState , action) => {
     switch(action.type){
+        // case typesAct.ADD_TO_CART :
+        //     var {quantity} = action
+        //     var index = null;
+        //     console.log(action);
+        //     for( var i = 0; i < state.length ; i ++){
+        //         index = i
+        //         break
+        //     }
+        //     if(state[index].product.inventory > 0) {
+        //         state[index].product.inventory += quantity
+        //     }
+        // return [...state]
         default : return [...state]
     }
 }
