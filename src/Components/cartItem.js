@@ -1,10 +1,7 @@
 import React,{ Component } from "react";
 
 class CartItem extends Component {
-    decrQuantity = (product,quantity) =>{
-        this.props.UpdateQuantity(product,quantity)
-    }
-    incrQuantity = (product,quantity) =>{
+    UpdateQuantity = (product,quantity) =>{
         this.props.UpdateQuantity(product,quantity)
     }
     onDeleteCart = product => {
@@ -30,10 +27,10 @@ class CartItem extends Component {
                 <td className="center-on-small-only">
                     <span className="qty"> { item.quantity }</span>
                     <div className="btn-group radio-group" data-toggle="buttons">
-                        <label onClick={()=>this.decrQuantity(item.product,-1)} className="btn btn-sm btn-primary btn-rounded waves-effect waves-light">
+                        <label onClick={()=>this.UpdateQuantity(item.product,-1)} className="btn btn-sm btn-primary btn-rounded waves-effect waves-light">
                             <a >—</a>
                         </label>
-                        <label onClick={()=>this.incrQuantity(item.product,1)} className="btn btn-sm btn-primary btn-rounded waves-effect waves-light">
+                        <label onClick={()=>this.UpdateQuantity  (item.product,1)} className="btn btn-sm btn-primary btn-rounded waves-effect waves-light">
                             <a >+</a>
                         </label>
                     </div>

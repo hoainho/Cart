@@ -1,5 +1,4 @@
 import * as types from '../constant/Actions';
-import _ from 'lodash';
 // var data = JSON.parse(localStorage.getItem('CART'))
 var initialState = [
     {
@@ -28,12 +27,13 @@ var initialState = [
     }
 ]
 var cart = (state = initialState , action) => {
-    var { product , quantity } = action
+    var { product , quantity ,products} = action
     var index = -1
+    var i = 0;
     switch(action.type){
         case types.ADD_TO_CART:
             if(state.length > 0){
-                for( var i = 0 ; i < state.length ; i ++){
+                for(i = 0 ; i < state.length ; i ++){
                     if(state[i].product.id === product.id){
                         index = i
                         break
@@ -50,13 +50,9 @@ var cart = (state = initialState , action) => {
                 })
             
             }
-        
             return [...state] 
         case types.DEL_TO_CART : 
-        console.log(action);
-            var { products } = action
-            var index = null
-            for( var i = 0 ; i < state.length ; i ++){
+            for(i = 0 ; i < state.length ; i ++){
                 if(state[i].product.id === products.id){
                     index = i
                     break
@@ -65,15 +61,14 @@ var cart = (state = initialState , action) => {
             state.splice(index,1)
         return [...state]
         case types.UPDATE_QUANTITY : 
-        var { product , quantity } = action
             if(state.length > 0){
-                    for( var i = 0 ; i < state.length ; i ++){
+                    for(i = 0 ; i < state.length ; i ++){
                         if(state[i].product.id === product.id){
                             index = i
                             break
                         }
                     }
-                    if(state[index].quantity > 1){
+                    if(state[index].quantity >= 1){
                         state[index].quantity += quantity
                     }
                     else{
