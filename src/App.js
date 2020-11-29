@@ -3,7 +3,9 @@ import Navbar  from './Components/navbar';
 import Footer  from './Components/Footer';
 import ProductContainer  from './containers/ProductContainer';
 import CartContainer from './containers/CartContainer';
-import MessageContainer from './containers/MessageContainer';
+import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
+toast.configure()
 function App() {
   return (
        <div>
@@ -11,7 +13,6 @@ function App() {
         <main id="mainContainer">
             <div className="container">
                 <ProductContainer />
-                <MessageContainer />
                 <CartContainer/>
             </div>
         </main>

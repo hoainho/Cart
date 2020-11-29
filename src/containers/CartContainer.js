@@ -18,15 +18,17 @@ class CartContainer extends Component {
     }
     showCart = (cart) =>{
       var result = Message.MESS_EMPTY_TO_CART;
+      if(cart.length > 0 ){
         result = cart.map((item, index) =>{
-            return <CartItem 
-                    key={ index } 
-                    item ={ item } 
-                    index={ index } 
-                    UpdateQuantity = { this.props.UpdateQuantity }
-                    ChangeMessage = { this.props.ChangeMessage }
-                    DeleteCart = { this.props.DeleteCart }/>
-        })
+          return <CartItem 
+                  key={ index } 
+                  item ={ item } 
+                  index={ index } 
+                  UpdateQuantity = { this.props.UpdateQuantity }
+                  ChangeMessage = { this.props.ChangeMessage }
+                  DeleteCart = { this.props.DeleteCart }/>
+      })
+      }
       return result
     }
     

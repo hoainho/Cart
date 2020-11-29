@@ -1,5 +1,6 @@
 import React, { Component } from 'react'; 
 import * as message from '../constant/Message';
+import { toast } from 'react-toastify';
 class ProductItem extends Component {
     
     showRating(rating){
@@ -14,7 +15,14 @@ class ProductItem extends Component {
     };
     onAddToCart = (product) =>{
         this.props.AddToCart(product)
-        this.props.ChangeMessage(message.MESS_ADD_TO_CART)
+        if(product.inventory > 0){
+            console.log(product.inventory);
+            toast.success(message.MESS_ADD_TO_CART)
+        }
+        else{
+            console.log(product.inventory);
+            toast.warning(message.MESS_ERROR_TO_CART)
+        }
     }
     render(){
         var { product } = this.props;
@@ -22,8 +30,7 @@ class ProductItem extends Component {
             <div className="col-lg-4 col-md-6 mb-r">
                 <div className="card text-center card-cascade narrower">
                 <div className="view overlay hm-white-slight z-depth-1">
-                    <img src={product.image}
-                        className="img-fluid" alt={product.name} />
+                    <img src={product.image} className="img-fluid" alt={product.name} />
                     <a href="/">
                         <div className="mask waves-light waves-effect waves-light"></div>
                     </a>
@@ -31,9 +38,9 @@ class ProductItem extends Component {
                 <div className="card-body">
                     <h4 className="card-title">
                         <strong>
-                            <a href="/">{product.name}</a>
+                            <a  href="/">{product.name}</a>
                         </strong>
-                    </h4>
+                    </h4>   
                     <ul className="rating">
                         <li>
                             {this.showRating(product.rating)}

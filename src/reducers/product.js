@@ -1,4 +1,4 @@
-import * as typesAct from '../constant/Actions';
+import * as types from '../constant/Actions';
 var initialState = [
     {
         id : 1,
@@ -29,19 +29,21 @@ var initialState = [
     }
 ]
 var products = (state = initialState , action) => {
+    localStorage.setItem('PRODUCT',JSON.stringify(state))
     switch(action.type){
-        // case typesAct.ADD_TO_CART :
-        //     var {quantity} = action
-        //     var index = null;
-        //     console.log(action);
-        //     for( var i = 0; i < state.length ; i ++){
-        //         index = i
-        //         break
-        //     }
-        //     if(state[index].product.inventory > 0) {
-        //         state[index].product.inventory += quantity
-        //     }
-        // return [...state]
+        case types.ADD_TO_CART :
+            var index = null;
+            for( var i = 0; i < state.length ; i++){
+                if(state[i].id === action.product.id){
+                    index = i
+                    break
+                }
+            }
+            if(state[index].inventory > 0) {
+                state[index].inventory += -1
+            }   
+            localStorage.setItem('CART',JSON.stringify(state))
+        return [...state]
         default : return [...state]
     }
 }
