@@ -1,11 +1,19 @@
 import React,{ Component } from "react";
-
+import { toast } from 'react-toastify';
+import * as message from '../constant/Message';
 class CartItem extends Component {
     UpdateQuantity = (product,quantity) =>{
         this.props.UpdateQuantity(product,quantity)
+        if(product.inventory >0 ){
+            toast.success(message.MESS_ADD_TO_CART)
+        }
+        else{
+            toast.error(message.MESS_ERROR_TO_CART)
+        }
     }
     onDeleteCart = product => {
         this.props.DeleteCart(product);
+        toast.success(message.MESS_DELETE_TO_CART)
     }
     priceTotal = (price,quantity) =>{
         return price * quantity

@@ -16,11 +16,9 @@ class ProductItem extends Component {
     onAddToCart = (product) =>{
         this.props.AddToCart(product)
         if(product.inventory > 0){
-            console.log(product.inventory);
             toast.success(message.MESS_ADD_TO_CART)
         }
         else{
-            console.log(product.inventory);
             toast.warning(message.MESS_ERROR_TO_CART)
         }
     }

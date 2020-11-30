@@ -40,10 +40,26 @@ var products = (state = initialState , action) => {
                 }
             }
             if(state[index].inventory > 0) {
-                state[index].inventory += -1
-            }   
-            localStorage.setItem('CART',JSON.stringify(state))
+                state[index].inventory -= 1
+            }else{
+                state[index].inventory = 0 
+            }  
+            localStorage.setItem('PRODUCT',JSON.stringify(state))
         return [...state]
+        case types.UPDATE_QUANTITY : 
+            for( i = 0; i < state.length ; i++){
+                if(state[i].id === action.product.id){
+                    index = i
+                    break
+                }
+            }
+            if(state[index].inventory > 0) {
+                state[index].inventory -= action.quantity
+            }else{
+                state[index].inventory = 0 
+            }
+            localStorage.setItem('PRODUCT',JSON.stringify(state))
+            return [...state]
         default : return [...state]
     }
 }
