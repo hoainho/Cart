@@ -202,9 +202,6 @@ class Navbar extends Component {
                             <li className="breadcrumb-item">
                                 <Link to="/Cart"> Cart</Link>
                             </li>
-                            <li className="breadcrumb-item">
-                                <Link to="/About">About</Link>
-                            </li>
                         </ol>
                     </div>
     
