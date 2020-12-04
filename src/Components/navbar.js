@@ -1,20 +1,6 @@
 import React, { Component } from 'react'
-import { Route, Link  } from 'react-router-dom'
+import MenuLink from './link';
 
-const LinkCustom = ( {exactCheck, to, label} ) => {
-    return (
-        <Route  path={to} exact ={exactCheck} children = { ({match}) =>{
-            var active = match ? "breadcrumb-item active" : "breadcrumb-item"
-            return (
-                <li  className={active}>
-                        <Link to={to} className="my-link">
-                          {label}
-                        </Link>
-                </li>
-            )
-        }}/>
-    )}
-   
 
 class Navbar extends Component {
     render(){
@@ -206,12 +192,7 @@ class Navbar extends Component {
                             </a>
                         </div>
 
-                        <div className="breadcrumb-dn mr-auto">
-                            <ol className="breadcrumb header-breadcrumb">
-                                <LinkCustom label="Trang Chủ" exact={true} to="/" />
-                                <LinkCustom label="Cart" exact={false} to="/Cart" />
-                            </ol>
-                        </div>
+                        <MenuLink />
         
                         <ul className="nav navbar-nav nav-flex-icons ml-auto">
                             <li className="nav-item dropdown">

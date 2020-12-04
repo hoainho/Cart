@@ -1,6 +1,7 @@
 import React, { Component } from 'react'; 
 import * as message from '../constant/Message';
 import { toast } from 'react-toastify';
+import { NavLink } from 'react-router-dom';
 class ProductItem extends Component {
     
     showRating(rating){
@@ -36,7 +37,7 @@ class ProductItem extends Component {
                 <div className="card-body">
                     <h4 className="card-title">
                         <strong>
-                            <a  href="/">{product.name}</a>
+                            <NavLink  to={`${product.name}/${product.slug}`}>{product.name}</NavLink>
                         </strong>
                     </h4>   
                     <ul className="rating">

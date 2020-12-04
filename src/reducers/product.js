@@ -7,7 +7,8 @@ var initialState = [
         description : 'Adidas 3 sọc',
         price : 250,
         inventory : 10,
-        rating : 4
+        rating : 4,
+        slug : 'champion'
     },
     {
         id : 2,
@@ -16,7 +17,8 @@ var initialState = [
         description : 'EverLast Tím',
         price : 180,
         inventory : 15,
-        rating : 5
+        rating : 5,
+        slug : 'reebok'
     },
     {
         id : 3,
@@ -25,7 +27,8 @@ var initialState = [
         description : 'Sanfrancisco xanh lá',
         price : 200,
         inventory : 5,
-        rating : 3
+        rating : 3,
+        slug : 'nike'
     }
 ]
 var products = (state = initialState , action) => {
