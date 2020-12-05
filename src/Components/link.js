@@ -10,6 +10,11 @@ const items = [
         label : 'Cart',
         exact : false,
         to : '/Cart'
+    },
+    {
+        label : 'Login',
+        exact : false,
+        to : '/Login'
     }
 ]
 const LinkCustom = ( {exactCheck, to, label} ) => {

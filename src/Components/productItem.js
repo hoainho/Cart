@@ -1,7 +1,8 @@
 import React, { Component } from 'react'; 
 import * as message from '../constant/Message';
 import { toast } from 'react-toastify';
-import { NavLink } from 'react-router-dom';
+import {BrowserRouter as Router,Switch, NavLink,Route } from 'react-router-dom';
+import Notification from './Notification';
 class ProductItem extends Component {
     
     showRating(rating){
@@ -25,8 +26,11 @@ class ProductItem extends Component {
     }
     render(){
         var { product } = this.props;
+        var { match } = this.props;
+        var url = match.url
         return (
-            <div className="col-lg-4 col-md-6 mb-r">
+            <Router>
+                <div className="col-lg-4 col-md-6 mb-r">
                 <div className="card text-center card-cascade narrower">
                 <div className="view overlay hm-white-slight z-depth-1">
                     <img src={product.image} className="img-fluid" alt={product.name} />
@@ -37,7 +41,7 @@ class ProductItem extends Component {
                 <div className="card-body">
                     <h4 className="card-title">
                         <strong>
-                            <NavLink  to={`${product.name}/${product.slug}`}>{product.name}</NavLink>
+                            <NavLink  to={`${url}${product.slug}`}>{product.name}</NavLink>
                         </strong>
                     </h4>   
                     <ul className="rating">
@@ -63,8 +67,14 @@ class ProductItem extends Component {
                         </span>
                     </div>
                 </div>
+            </div >
+            <div className="row">
+               <Switch>
+                    <Route path="/:name" component={Notification} />
+               </Switch>
             </div>
             </div>
+            </Router>
         );
     }
 

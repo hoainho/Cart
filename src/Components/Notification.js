@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
-
-class Message extends Component {
+class Notification extends Component {
     render(){
-        var {showMessage} = this.props
+        var {match} = this.props
         return (
             <h3>
-                <span className="badge amber darken-2"> { showMessage }</span>
+                <h1 className="badge amber darken-2"> {`Chi tiết sản phẩm ${match.params.name}`}</h1>
             </h3>
+              
      
        );
     }
   }
-  export default Message;
+  export default Notification;
   

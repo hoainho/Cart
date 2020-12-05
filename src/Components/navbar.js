@@ -196,9 +196,9 @@ class Navbar extends Component {
         
                         <ul className="nav navbar-nav nav-flex-icons ml-auto">
                             <li className="nav-item dropdown">
-                                <a href="/"className="nav-link dropdown-toggle waves-effect waves-light" id="dropdownMenu1">
+                                <soan className="nav-link dropdown-toggle waves-effect waves-light" id="dropdownMenu1">
                                     <i className="fa fa-user"></i> Tài Khoản
-                                </a>
+                                </soan>
                                 <div className="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
                                     <a href="/" className="dropdown-item waves-effect waves-light">Đăng Ký</a>
                                     <a href="/" className="dropdown-item waves-effect waves-light">Đăng Nhập</a>

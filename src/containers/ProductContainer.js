@@ -2,17 +2,22 @@ import React,{ Component } from 'react';
 import { connect } from 'react-redux';
 import Products from '../Components/Products';
 import ProductItem from '../Components/productItem';
+import { Prompt } from 'react-router-dom'
 import * as actions from '../actions/index';
 class ProductContainer extends Component {   
     render(){
         var { products } = this.props
         var { AddToCart,ChangeMessage } = this.props
         const elmProducts = products.map((product,index) => {
-            return <ProductItem key={index} product={product} AddToCart = { AddToCart } ChangeMessage = {ChangeMessage}/>
+            return <ProductItem key={index} match={this.props.match} product={product} AddToCart = { AddToCart } ChangeMessage = {ChangeMessage}/>
         });
     return (
         <Products>
             { elmProducts }
+            <Prompt 
+                when={true}
+                message = { location => (`Bạn chắc chắn chuyển qua ${location.pathname}`)}
+            /> 
         </Products>
     );
     }
