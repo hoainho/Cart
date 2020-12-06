@@ -15,6 +15,16 @@ const items = [
         label : 'Login',
         exact : false,
         to : '/Login'
+    },
+    {
+        label : 'Inventory',
+        exact : false,
+        to : '/Inventory'
+    },
+    {
+        label : '',
+        exact : false,
+        to : ''
     }
 ]
 const LinkCustom = ( {exactCheck, to, label} ) => {

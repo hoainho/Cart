@@ -14,7 +14,7 @@ class App extends Component {
         return <Route key={index} path={item.path} exact={item.exact} component={item.main}/>
       })
     }
-    return result
+    return <Switch>{result}</Switch>
   }
   render(){
     
@@ -22,13 +22,11 @@ class App extends Component {
         <div>
           <Router>
             <Navbar />
-              <Switch>
                 <main id="mainContainer">
                     <div className="container">
                         {this.showContentRouter(router)}
                     </div>
                 </main>
-              </Switch>
             <Footer />
           </Router>
       </div>
