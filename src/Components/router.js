@@ -2,8 +2,8 @@ import React from 'react'
 import ProductContainer  from '../containers/ProductContainer';
 import CartContainer from '../containers/CartContainer';
 import Login from './login'
-import Inventory from './inventory';
 import NotFound from './NotFound';
+import InventoryContainer from '../containers/InventoryContainer';
 const router =[ 
     {
         path : '/',
@@ -23,7 +23,7 @@ const router =[
     {
         path : '/Inventory',
         exact : false,
-        main : ()=> <Inventory />
+        main : ()=> <InventoryContainer />
     },
     {
         path : '',

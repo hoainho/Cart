@@ -1,5 +1,4 @@
 import React,{ Component } from 'react';
-import { connect } from 'react-redux'
 import InventoryItems from './inventoryItems';
 class inventoryList extends Component {
     render(){
@@ -24,5 +23,5 @@ class inventoryList extends Component {
        );
     }
   }
-export default connect(null,null)(inventoryList);
+export default inventoryList;
   

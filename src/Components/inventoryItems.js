@@ -1,5 +1,4 @@
 import React,{ Component } from 'react';
-import { connect } from 'react-redux'
 class inventoryItems extends Component {
     render(){
         return (
@@ -16,5 +15,5 @@ class inventoryItems extends Component {
        );
     }
   }
-export default connect(null,null)(inventoryItems);
+export default inventoryItems;
   

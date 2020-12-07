@@ -8,7 +8,9 @@ class inventory extends Component {
                 
                 <button type="button" class="btn btn-primary">ADD</button>
                 
-                <InventoryList />
+                <InventoryList >
+                    
+                </InventoryList>
             </section>       
        );
     }
