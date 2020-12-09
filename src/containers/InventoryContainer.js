@@ -24,9 +24,7 @@ class inventoryContainer extends Component {
                   key={ index } 
                   item ={ item } 
                   index={ index } 
-                  UpdateQuantity = { this.props.UpdateQuantity }
-                  ChangeMessage = { this.props.ChangeMessage }
-                  DeleteCart = { this.props.DeleteCart }/>
+                  UpdateQuantity = { this.props.UpdateQuantity }/>
       })
       }
       return result
@@ -62,12 +60,6 @@ const Actions = (dispatch,props) =>{
   return {
     UpdateQuantity : (product,quantity) => {
       dispatch(actions.actUpdateQuantity(product,quantity))
-    },
-    ChangeMessage : message => {
-      dispatch(actions.actChangeMessage(message))
-    },
-    DeleteCart : product => {
-      dispatch(actions.actDelToCart(product))
     }
   }
 
