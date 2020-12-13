@@ -1,5 +1,4 @@
 import * as types from '../constant/Actions';
-var data = localStorage.getItem('PRODUCT')
 var initialState = [
     {
         id : 1,
