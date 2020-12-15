@@ -34,36 +34,7 @@ var initialState = [
 var products = (state = initialState , action) => {
     localStorage.setItem('PRODUCT',JSON.stringify(state))
     switch(action.type){
-        case types.ADD_TO_CART :
-            var index = null;
-            for( var i = 0; i < state.length ; i++){
-                if(state[i].id === action.product.id){
-                    index = i
-                    break
-                }
-            }
-            if(state[index].inventory > 0) {
-                state[index].inventory -= 1
-            }else{
-                state[index].inventory = 0 
-            }  
-            localStorage.setItem('PRODUCT',JSON.stringify(state))
-        return [...state]
-        case types.UPDATE_QUANTITY : 
-            for( i = 0; i < state.length ; i++){
-                if(state[i].id === action.product.id){
-                    index = i
-                    break
-                }
-            }
-            if(state[index].inventory > 0) {
-                state[index].inventory -= action.quantity
-            }else{
-                state[index].inventory = 0 
-            }
-            localStorage.setItem('PRODUCT',JSON.stringify(state))
-            return [...state]
         default : return [...state]
     }
 }
-export default products;
+export default products; 

@@ -11,30 +11,23 @@ class inventoryContainer extends Component {
       var {inventory} = this.props
     return (
           <Inventory>
-              { this.showCart(inventory) }
-              { this.showCartTotal(inventory)}
+              { this.showInventory(inventory) }
           </Inventory> 
       );
     }
-    showCart = (inventory) =>{
+    showInventory = (inventory) =>{
       var result = Message.MESS_EMPTY_TO_CART;
       if(inventory.length > 0 ){
         result = inventory.map((item, index) =>{
           return <InventoryItem 
                   key={ index } 
                   item ={ item } 
-                  index={ index } 
-                  UpdateQuantity = { this.props.UpdateQuantity }/>
+                  index={ index }/>
       })
       }
       return result
     }
-    
-    showCartTotal = inventory =>{
-      return <InventoryList inventory = { inventory }/>
-    }
   }
-
 
   inventoryContainer.propTypes = {
   products : PropTypes.arrayOf(PropTypes.shape({
@@ -53,7 +46,7 @@ class inventoryContainer extends Component {
 }
 const Database = state =>{
   return {
-    inventory : state.cart
+    inventory : state.products
   }
 }
 const Actions = (dispatch,props) =>{

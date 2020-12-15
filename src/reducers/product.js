@@ -1,5 +1,4 @@
 import * as types from '../constant/Actions';
-var data = localStorage.getItem('PRODUCT')
 var initialState = [
     {
         id : 1,
@@ -14,7 +13,7 @@ var initialState = [
     {
         id : 2,
         name : 'Reebok',
-        image: 'https://www.slamjam.com/dw/image/v2/BDHR_PRD/on/demandware.static/-/Sites-catalog-slamjam-master/default/dw5e64cf47/hi-res/1G30115005_S20-NAVY_01.png?sw=400&sh=500',
+        image: 'https://process.fs.heroine.com/AFb875wTiRuaf060oJed7z/auto_image/cache=expiry:max/rotate=deg:exif/resize=height:335,fit:scale/output=quality:90/compress/https://cdn.fs.heroine.com/api/file/3655qSEcSYidWOsGJyiI',
         description : 'EverLast Tím',
         price : 180,
         inventory : 15,

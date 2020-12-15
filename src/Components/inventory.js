@@ -7,9 +7,8 @@ class inventory extends Component {
             <section className="section">
                 
                 <button type="button" class="btn btn-primary">ADD</button>
-                
                 <InventoryList >
-                    
+                    {this.props.children}
                 </InventoryList>
             </section>       
        );
